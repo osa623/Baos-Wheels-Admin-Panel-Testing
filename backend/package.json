@@ -2,6 +2,7 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "Admin Panel of Baos wheels web application",
+  "type": "module",
   "main": "server.js",
   "scripts": {
     "start": "nodemon --exec babel-node server.js"
