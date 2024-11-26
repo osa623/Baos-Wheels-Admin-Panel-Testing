@@ -1,8 +1,8 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
-const User = require('../models/User');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+import User from '../models/User.js';
 
 // Register a new Admin
 router.post('/reg', async (req, res) => {
@@ -85,4 +85,4 @@ router.post('/login', async (req, res) => {
     }
 });
 
-module.exports = router;
+export default router;

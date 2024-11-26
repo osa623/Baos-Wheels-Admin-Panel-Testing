@@ -6,14 +6,16 @@ import reviewRoute from "./routes/review.js";
 import articleRoute from "./routes/article.js"; 
 import userRoute from "./routes/user.js";
 
-const http = require('http');
-const path = require('fs');
-const fsPromises = require('fs').promises;
+import http from 'http';
+import fs from 'fs';
+
+import { promises as fsPromises } from 'fs';
 
 
 
-const logEvents = require('./logEvents.js');
-const EventEmitter = require('events');
+import logEvents from './logEvents.js';
+import { EventEmitter } from 'events';
+
 
 class MyEmitter extends EventEmitter {};
 
