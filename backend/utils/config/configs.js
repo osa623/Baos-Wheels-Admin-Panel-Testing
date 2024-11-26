@@ -1,4 +1,3 @@
-// config/configs.js
 
 import dotenv from 'dotenv';
 

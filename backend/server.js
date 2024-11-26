@@ -26,20 +26,6 @@ const server = http.createServer((req, res) => {
 
 
 
-
-
-
-
-
-//adding a listner for the log events
-//myEmitter.on('log', (msg) => logEvents(msg));
-
-/*setTimeout(()=> {
-  //Emitting the Event
-  myEmitter.emit('log', 'Log event emitted!');
-})*/
-
-// Load environment variables
 dotenv.config();
 
 // Initialize the express app
