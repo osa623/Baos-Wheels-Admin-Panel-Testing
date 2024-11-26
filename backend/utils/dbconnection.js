@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
-import config from "../config/configs";
+import { DB_CONNECTION_STRING, JWT_SECRET } from './config/configs.js';
+
 
 let database;
 
