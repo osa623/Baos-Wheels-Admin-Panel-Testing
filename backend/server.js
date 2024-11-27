@@ -34,20 +34,13 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// CORS Configuration
-const whiteList = ['http://localhost:3000', 'http://localhost:3001', 'https://baoswheels.com', 'https://admin.baoswheels.com'];
+
 
 const corsOptions = {
-  origin: (origin, callback) => {
-    if (!origin || whiteList.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-  credentials: true, 
-  optionsSuccessStatus: 200
-};
+  origin: ['http://localhost:3000', 'https://baoswheels.com'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], 
+  allowedHeaders: ['Content-Type', 'Authorization'], 
+}
 
 // Apply middlewares
 app.use(cors(corsOptions));
