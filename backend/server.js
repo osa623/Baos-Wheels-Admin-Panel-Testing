@@ -32,7 +32,7 @@ dotenv.config();
 
 // Initialize the express app
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 80;
 
 // CORS Configuration
 const whiteList = ['http://localhost:3000', 'http://localhost:3001', 'https://baoswheels.com', 'https://admin.baoswheels.com'];
