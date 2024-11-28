@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e8ccfe63.css",
+    "main.js": "/static/js/main.af039847.js",
+    "static/js/453.8ab44547.chunk.js": "/static/js/453.8ab44547.chunk.js",
+    "static/media/baoswheelslogo.png": "/static/media/baoswheelslogo.aee94016a535217aeca3.png",
+    "index.html": "/index.html",
+    "static/media/arrow-right.svg": "/static/media/arrow-right.38569b0285302f1299f20728d115a950.svg",
+    "main.e8ccfe63.css.map": "/static/css/main.e8ccfe63.css.map",
+    "main.af039847.js.map": "/static/js/main.af039847.js.map",
+    "453.8ab44547.chunk.js.map": "/static/js/453.8ab44547.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e8ccfe63.css",
+    "static/js/main.af039847.js"
+  ]
+}
