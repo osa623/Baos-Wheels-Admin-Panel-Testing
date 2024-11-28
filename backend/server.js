@@ -17,10 +17,12 @@ const PORT = process.env.PORT || 5000;
 
 // CORS options
 const corsOptions = {
-  origin: ['http://localhost:3000', 'https://baoswheels.com', 'https://king-prawn-app-jeyv6.ondigitalocean.app'],
+  origin: ['https://king-prawn-app-jeyv6.ondigitalocean.app', 'https://baoswheels.com'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
+  credentials: true, // Ensure credentials are sent if needed
 };
+
 
 // Apply middlewares
 app.use(cors(corsOptions));
