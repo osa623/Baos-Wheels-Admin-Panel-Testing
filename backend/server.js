@@ -7,26 +7,7 @@ import articleRoute from "./routes/article.js";
 import userRoute from "./routes/user.js";
 
 import http from 'http';
-import fs from 'fs';
-
-import { promises as fsPromises } from 'fs';
-
-
-
-import logEvents from './logEvents.js';
 import { EventEmitter } from 'events';
-
-
-class MyEmitter extends EventEmitter {};
-
-
-const myEmitter = new MyEmitter();
-
-const server = http.createServer((req, res) => {
-     console.log(req.url, req.method);
-});
-
-
 
 dotenv.config();
 
@@ -34,19 +15,21 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-
-
+// CORS options
 const corsOptions = {
-  origin: ['http://localhost:3000', 'https://baoswheels.com' ,'https://king-prawn-app-jeyv6.ondigitalocean.app'],
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], 
-  allowedHeaders: ['Content-Type', 'Authorization'], 
-}
+  origin: ['http://localhost:3000', 'https://baoswheels.com', 'https://king-prawn-app-jeyv6.ondigitalocean.app'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+};
 
 // Apply middlewares
 app.use(cors(corsOptions));
 app.use(express.json({ limit: "40mb" }));
 
-// Basic route
+// Handle preflight requests (OPTIONS)
+app.options('*', cors(corsOptions));
+
+// Basic route to test server
 app.get("/", (req, res) => {
   res.send("<h2>Your API is Working...</h2>");
 });
@@ -56,13 +39,15 @@ app.use("/api/reviews", reviewRoute);
 app.use("/api/articles", articleRoute);
 app.use("/api/users", userRoute);
 
-// Global error handling middleware (optional but recommended)
+// Handle 404 - Not Found (Optional)
+app.use((req, res, next) => {
+  res.status(404).json({ message: "Route not found" });
+});
+
+// Global error handling middleware
 app.use((err, req, res, next) => {
-  if (err) {
-    res.status(500).json({ message: err.message || "Server Error" });
-  } else {
-    next();
-  }
+  console.error(err); // Log error for debugging
+  res.status(500).json({ message: err.message || "Server Error" });
 });
 
 // Start the server and connect to DB
