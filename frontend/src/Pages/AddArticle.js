@@ -93,7 +93,7 @@ const AddArticle = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/articles/add",
+        "http://localhost:5000/api/article/add",
         articleData
       );
       console.log(response.data);

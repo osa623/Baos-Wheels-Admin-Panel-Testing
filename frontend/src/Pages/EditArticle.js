@@ -46,7 +46,7 @@ const EditArticle = () => {
     const fetchArticle = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/articles/get/${id}`
+          `http://localhost:5000/api/article/get/${id}`
         );
         const articleData = response.data;
         setTitle(articleData.title);

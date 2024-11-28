@@ -38,7 +38,7 @@ app.get("/", (req, res) => {
 
 // API routes
 app.use("/api/reviews", reviewRoute);
-app.use("/api/articles", articleRoute);
+app.use("/api/article", articleRoute);
 app.use("/api/users", userRoute);
 
 // Handle 404 - Not Found (Optional)
