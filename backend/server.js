@@ -37,7 +37,7 @@ const PORT = process.env.PORT || 5000;
 
 
 const corsOptions = {
-  origin: ['http://localhost:3000', 'https://baoswheels.com'],
+  origin: ['http://localhost:3000', 'https://baoswheels.com' ,'https://king-prawn-app-jeyv6.ondigitalocean.app'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'], 
   allowedHeaders: ['Content-Type', 'Authorization'], 
 }
