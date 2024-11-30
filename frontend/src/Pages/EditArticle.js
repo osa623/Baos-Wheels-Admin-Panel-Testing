@@ -135,7 +135,7 @@ const EditArticle = () => {
 
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/articles/update/${id}`,
+        `http://localhost:5000/api/article/update/${id}`,
         articleData
       );
       console.log(response.data);

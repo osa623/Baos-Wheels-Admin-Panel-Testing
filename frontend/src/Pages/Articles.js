@@ -41,7 +41,7 @@ const Articles = () => {
   const deleteArticle = async (articleId) => {
     try {
       const response = await axios.delete(
-        `http://localhost:5000/api/articles/delete/${articleId}`
+        `http://localhost:5000/api/article/delete/${articleId}`
       );
 
       if (response.status === 200) {

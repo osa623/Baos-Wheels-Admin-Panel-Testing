@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 5000;
 
 // CORS options
 const corsOptions = {
-  origin: ['https://baoswheels.com', 'https://admin.baoswheels.com'],
+  origin: ['https://baoswheels.com', 'https://www.baoswheels.com'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
   credentials: true, // Ensure credentials are sent if needed
