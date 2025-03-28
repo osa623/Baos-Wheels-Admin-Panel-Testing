@@ -30,7 +30,7 @@
     "@babel/core": "^7.24.7",
     "@babel/node": "^7.24.7",
     "@babel/preset-env": "^7.24.7",
-    "nodemon": "^3.1.4"
+    "nodemon": "^3.1.9"
   },
   "babel": {
     "presets": [
