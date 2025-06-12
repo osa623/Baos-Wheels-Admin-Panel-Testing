@@ -5,6 +5,7 @@ import { connect } from "./utils/dbconnection.js";
 import reviewRoute from "./routes/review.js";
 import articleRoute from "./routes/article.js"; 
 import userRoute from "./routes/user.js";
+import newsRoute from "./routes/news.js";
 
 import http from 'http';
 import { EventEmitter } from 'events';
@@ -40,6 +41,7 @@ app.get("/", (req, res) => {
 app.use("/api/reviews", reviewRoute);
 app.use("/api/article", articleRoute);
 app.use("/api/users", userRoute);
+app.use("/api/news", newsRoute);
 
 // Handle 404 - Not Found (Optional)
 app.use((req, res, next) => {
