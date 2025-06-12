@@ -4,7 +4,7 @@ import News from "../models/News.js";
 const router = express.Router();
 
 // GET all news articles
-router.get("/", async (req, res) => {
+router.get("/get", async (req, res) => {
   try {
     const news = await News.find().sort({ createdAt: -1 });
     res.status(200).json(news);
