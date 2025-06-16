@@ -17,20 +17,15 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // CORS options
-const corsOptions = {
-  origin: ['https://baoswheels.com', 'https://www.baoswheels.com', 'http://localhost:8081/', 'http://localhost:3000'],
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
-  credentials: true, // Ensure credentials are sent if needed
-};
-
+app.use(cors({
+  origin: '*',
+}));
 
 // Apply middlewares
-app.use(cors(corsOptions));
 app.use(express.json({ limit: "40mb" }));
 
 // Handle preflight requests (OPTIONS)
-app.options('*', cors(corsOptions));
+app.options('*', cors());
 
 // Basic route to test server
 app.get("/", (req, res) => {
