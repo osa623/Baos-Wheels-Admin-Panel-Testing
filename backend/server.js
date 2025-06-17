@@ -21,6 +21,14 @@ app.use(cors({
   origin: '*',
 }));
 
+//newly added search function 
+app.get('/api/search', async (req, res) => {
+  const query = req.query.q;
+  // perform your search logic
+  res.json({ results: [...] });
+});
+
+
 // Apply middlewares
 app.use(express.json({ limit: "40mb" }));
 
